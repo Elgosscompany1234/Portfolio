@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varsha Singh | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/text.css">
+</head>
+
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Hello! It's Me<br>Varsha Singh</h2>
+                <p>I'm a Full stark Developer</p>
+                <p>Email: varshasingh2001vs@gmail.com</p>
+                <button class="btn" onclick="dowloadCV()">download CV</button>
+
+                <!-- Download CV -->
+                <!-- <a href="static/cv-varsha.png" download>
+                        <button class="btn">Download CV</button>
+                    </a> -->
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='image/varsha img.jpg') }}" alt="Varsha Image">
+
+    </section>
+
+    <hr>
+
+    <section id="about" class="about" style="  background: linear-gradient(to right, #E8BAF0, #FCDCE1);">
+        <h2>About <span style="color:cyan;">Me</span></h2>
+        <p>Bachelor of Engineering<br>Full stark Developer</p>
+        <img src="{{ url_for('static', filename='image/varsha img.jpg') }}" alt="Varsha Image">
+
+
+    </section>
+    <hr>
+
+    <section id="services" class="services">
+        <h2>Our <span style="color:cyan;">Services</span></h2>
+
+        <!-- UI/UX Design Card -->
+        <div class="card">
+            <h4>UI/UX Design</h4>
+            <p>Design responsive and modern interfaces.</p>
+
+            <div id="readMoreUI" style="display: none; margin-top: 10px;">
+                <h5>🔷 UI (User Interface)</h5>
+                <p>
+                    UI refers to the visual elements of a product—what users see and interact with. This includes buttons, colors, typography, icons, layout, and animations.
+                </p>
+                <h5>🔶 UX (User Experience)</h5>
+                <p>
+                    UX is about how a user feels while using a product. It includes research, wireframes, and testing to improve overall satisfaction.
+                </p>
+                <h5>🔁 UI vs UX</h5>
+                <ul>
+                    <li><strong>UI:</strong> Visual design and interaction</li>
+                    <li><strong>UX:</strong> User flow and experience</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="toggleReadMore('readMoreUI', this)">Read More</button>
+        </div>
+
+        <!-- Web Development Card -->
+        <div class="card">
+            <h4>Web Development</h4>
+            <p>Create responsive websites using HTML, CSS, JS, Bootstrap.</p>
+
+            <div id="readMoreWeb" style="display: none; margin-top: 10px;">
+                <p>
+                    Web development involves creating websites and applications that run in browsers. It includes:
+                </p>
+                <ul>
+                    <li>💻 HTML for structure</li>
+                    <li>🎨 CSS for styling</li>
+                    <li>⚙️ JavaScript for interactivity</li>
+                    <li>📦 Bootstrap for responsive design</li>
+                    <li>🌐 Hosting and domain setup</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="toggleReadMore('readMoreWeb', this)">Read More</button>
+        </div>
+
+        <!-- Frontend Projects Card -->
+        <div class="card">
+            <h4>Frontend Projects</h4>
+            <p>Develop and maintain web applications.</p>
+
+            <div id="readMoreProjects" style="display: none; margin-top: 10px;">
+                <p>Here are types of frontend projects you can build:</p>
+                <ul>
+                    <li>🔐 Login & Signup Forms</li>
+                    <li>📅 To-do List / Calendar App</li>
+                    <li>🧾 Portfolio Websites</li>
+                    <li>📊 Dashboard & Admin Panels</li>
+                    <li>📷 Image Galleries, Carousels, etc.</li>
+                </ul>
+                <p>These projects demonstrate your skills in React, JavaScript, HTML/CSS, and frameworks.</p>
+            </div>
+            <button class="btn" onclick="toggleReadMore('readMoreProjects', this)">Read More</button>
+        </div>
+    </section>
+    <hr>
+
+    <section id="projects" class="projects" style="  background: linear-gradient(to right, #E8BAF0, #FCDCE1);">
+        <h2>Our <span style="color:cyan;">Project</span></h2>
+        <img src="{{ url_for('static', filename='image/laptop3.jpg') }}" alt="Project 1">
+        <img src="{{ url_for('static', filename='image/laptop2.jpg') }}" alt="Project 2">
+        <img src="{{ url_for('static', filename='image/laptop4.jpg') }}" alt="Project 3">
+    </section>
+    <hr>
+
+
+    <section id="contact" class="contact">
+        <h2>Contact <span style="color:cyan;">Me!</span></h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" name="name">
+            <input type="email" id="email" placeholder="Your Email" name="email">
+            <input type="text" id="qualification" placeholder="qualification" name="qualification">
+            <textarea id="message" rows="5" placeholder="Your Message" name="message"></textarea>
+            <button class="btn" type="submit">Save</button>
+        </form>
+
+        <p id="saveMessage" style="color: rgb(60, 0, 255); display: none; margin-top: 10px;">
+            Data saved successfully!
+        </p>
+        <div class="social-icons">
+            <a href="https://wa.me/6307828019" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/varsha-singh-1633b7290" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Kashiitvarsha" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Form submit ko rokna
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+            const date = new Date().toLocaleString();
+
+            const formData = {
+                name,
+                email,
+                subject,
+                message,
+                date
+            };
+
+            // Save to localStorage
+            localStorage.setItem("contactFormData", JSON.stringify(formData));
+
+            // Show confirmation
+            document.getElementById("saveMessage").style.display = "block";
+
+            // Optionally, reset form
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+    <script>
+        function openCV() {
+            window.open("static/cv-varsha.png", "_blank");
+        }
+    </script>
+    <script>
+        function toggleReadMore(id, btn) {
+            const content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                btn.textContent = "Read Less";
+            } else {
+                content.style.display = "none";
+                btn.textContent = "Read More";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
